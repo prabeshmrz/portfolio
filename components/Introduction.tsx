@@ -16,10 +16,8 @@ const Introduction = ({className}: IProps) => {
 
     useEffect(() => {
         const myElement = document.querySelector("#"+styles.typings);
-        if (myElement) {
-            console.log("this")
+        if (myElement)
             init(myElement, { showCursor: false, strings: ['Backend Engineer', 'Full Stack Developer', 'DevOps Engineer', 'Data Engineer', 'Linux Enthusiast'] })
-        }
     },[])
 
     return (
