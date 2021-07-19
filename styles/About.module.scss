@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+.about{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    // column-gap: 15%;
+}

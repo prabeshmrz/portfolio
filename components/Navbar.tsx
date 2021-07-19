@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "../styles/Navbar.module.scss";
+import Logo from "./Logo";
 
 const bubbleDirection = {
     height: 0,
@@ -42,23 +43,15 @@ const Navbar = () => {
     };
 
     const toggleAll = () => {
-        const svg = document.querySelector("#svg_circle");
-        const main = document.querySelector("main");
         const nav = document.querySelector("nav");
 
-        main?.classList.toggle("off");
         nav?.classList.toggle("on");
-        svg?.classList.toggle(styles.show);
     }
 
     const defaultToggles = () => {
-        const svg = document.querySelector("#svg_circle");
-        const main = document.querySelector("main");
         const nav = document.querySelector("nav");
 
-        main?.classList.remove("off");
         nav?.classList.remove("on");
-        svg?.classList.remove(styles.show);
     }
 
     if (typeof window=== 'object')
@@ -72,29 +65,27 @@ const Navbar = () => {
         sections.forEach(section => {
             observer.observe(section);
         })
+        // eslint-disable-next-line
     },[])
 
     useEffect(() => {
         window.addEventListener('resize', () => {checkActiveEntry(activeEntry)})
+        // eslint-disable-next-line
     }, [bubbleDirection])
 
     return (
         <>
             <nav id="#nav">
-                <pre className={styles.alias}>
-______          _               _      <br/>
-| ___ \        | |             | |     <br/>
-| |_/ / __ __ _| |__   ___  ___| |__   <br/>
-|  __/  __/ _` |  _ \ / _ \/ __|  _ \  <br/>
-| |  | | | (_| | |_) |  __/\__ \ | | | <br/>
-\_|  |_|  \__,_|_.__/ \___||___/_| |_| <br/>
-                       </pre>
+                <Logo className={styles.alias}/>
                 <div className={styles.nav}>
                     <Link href="#home">
                       <a data-page="home">Home</a>
                     </Link>
+                    <Link href="#about">
+                      <a data-page="about">About</a>
+                    </Link>
                     <Link href="#skill">
-                      <a data-page="skill">Skill & Experience</a>
+                      <a data-page="skill">Skill</a>
                     </Link>
                     <Link href="#project">
                       <a data-page="project">Projects</a>
@@ -113,9 +104,6 @@ ______          _               _      <br/>
                 <div></div>
                 <div></div>
             </div>
-            <svg id="svg_circle" className={`${styles.circle}`} xmlns="http://www.w3.org/2000/svg">
-              <circle cx="0" fill="coral" cy="0" r="120%"/>
-            </svg>
         </>
     )
 }

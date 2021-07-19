@@ -2,7 +2,6 @@
 
 .alias {
     margin: 0px;
-    color: #FFF;
     display: flex;
     width: 20%;
     align-items: center;
@@ -32,7 +31,7 @@
 .bubble {
     position: absolute;
     z-index: 1;
-    background-color: coral;
+    background-color: $primary;
     border-radius: 0.5em;
     transform: scale(0.9, 0.8);
     transition: all 0.3s ease-out;
@@ -44,7 +43,7 @@
     left: 0px;
     height: 0;
     width: 0;
-    // transition: all 0.6s ease-in;
+    transition: all 0.6s ease-in;
     z-index:1;
 }
 
@@ -53,17 +52,18 @@
     .alias{
         justify-content: center;
         width: inherit;
-        font-size: 1.2em;
-        padding: 20px 60px;
-        border: 2px dotted white;
+        font-size: 0.7rem;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $on_background;
     }
     .nav {
-        flex-direction: column;
+        display: grid;
         width: inherit;
-        height: auto;
+        height: 60%;
+        align-items: center;
         a {
             width: inherit;
-            height:80px;
+            height: 50px;
         }
     }
 

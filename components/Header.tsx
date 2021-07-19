@@ -6,6 +6,7 @@ const Header = () => {
         <>
             <Head>
                 <title>Prabesh Maharjan</title>
+                <meta name='keyword' content='portfolio, backend developer, java developer, backend developer portfolio' />
             </Head>
             <Navbar/>
         </>

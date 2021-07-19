@@ -1,0 +1,76 @@
+@import './variables.scss';
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15%;
+    position: relative;
+}
+
+#tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+}
+
+.avatar {
+    max-width: 300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: clip;
+}
+
+.description {
+    display: grid;
+    row-gap: 10%;
+
+    p {
+        padding: 0px;
+        margin:0px;
+        font-size: 1.4rem;
+        min-width: 275px;
+    }
+    h1 {
+        font-size: 2.4rem;
+        padding: 0px;
+        margin:0px;
+        span {
+            color: $foreground;
+        }
+    }
+}
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    column-gap: 15px;
+    z-index: 1;
+}
+
+#typings {
+    font-weight: bold;
+    color: $foreground;
+}
+
+@media only screen and (max-width: 665px) {
+    .home {
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 20% !important;
+        padding-bottom: 40% !important;
+    }
+    .avatar {
+        width: 70%;
+    }
+    .description {
+        text-align: center;
+    } 
+    .buttons {
+        margin: 0px;
+        justify-content: center;
+    }
+
+}

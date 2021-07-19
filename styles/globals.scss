@@ -8,7 +8,7 @@ body, #__next {
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     overflow: hidden;
     background-color: $background;
-    color: $foreground;
+    color: $on_background;
 }
 
 a {
@@ -30,6 +30,7 @@ a {
         position: sticky;
         top: 0px;
         overflow: hidden;
+        z-index: 2;
     }
 
     main {
@@ -41,10 +42,7 @@ a {
 
         .section {
             height: 92vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 10px;
             scroll-snap-align: end;
         }
 
@@ -72,15 +70,20 @@ a {
 @media only screen and (max-width: 665px) {
     #__next {
         nav {
-            height: 100vh;
+            height: 0;
+            width: 0;
             flex-direction: column;
             align-items: center;
-            padding: 50px 0px;
+            padding: 0;
             justify-content: space-around;
-            display:none;
-            z-index: 2;
+            transition: all 0.3s ease;
 
             &.on {
+                padding-top: 20%;
+                padding-bottom: 40%;
+                background-color: $primary;
+                height: 100vh;
+                width: 100vw;
                 display:flex;
             }
         }
@@ -88,9 +91,6 @@ a {
             height: 100vh;
             .section {
                 height: 100vh;
-            }
-            &.off {
-                display: none;
             }
         }
     }

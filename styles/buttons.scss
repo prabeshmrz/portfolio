@@ -1,0 +1,23 @@
+@import './variables.scss';
+
+.button {
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &.primary {
+        color: $foreground;
+        background: teal;
+    }
+
+    &.secondary {
+        border: 1px solid teal;
+        
+    }
+
+    &:hover {
+        color: $foreground;
+        background: coral;
+    }
+}
+
