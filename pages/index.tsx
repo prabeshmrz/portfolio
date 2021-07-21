@@ -1,5 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from 'next'
-import { useEffect } from 'react'
+import { GetStaticProps } from 'next'
 import fs from 'fs';
 import path from 'path';
 import About from '../components/About'
@@ -11,13 +10,10 @@ import Project from '../components/Project'
 import SkillExperience from '../components/SkillExperience'
 
 const Home = ({aboutme}: any) => {
-    useEffect(() => {
-        console.log(aboutme);
-    }, [])
     return (
         <>
             <Introduction/>
-            <About/>
+            <About data={aboutme}/>
             <SkillExperience/>
             <Project/>
             <Blog/>
@@ -29,9 +25,6 @@ const Home = ({aboutme}: any) => {
 
 export const getStaticProps: GetStaticProps = async () => {
     const aboutme = fs.readFileSync(path.join('contents/About/index.md'), 'utf-8')
-
-    console.log(aboutme);
-
     return { props: {aboutme} }
 }
 

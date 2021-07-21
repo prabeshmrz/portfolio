@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { AboutMeType } from '../pages/api/aboutme';
+import { AboutMeType, PersonalInfoType } from '../utils/Type/AboutMe';
 import ReactMarkdown from 'react-markdown';
 import Button from './Button';
 import PdfModal from './PdfModal';
+import matter from 'gray-matter';
 import styles from '../styles/About.module.scss';
+
 
 const initialState: AboutMeType = {content: "", infos: []};
 
-const About = () => {
+const About = ({data}: any) => {
 
-    const [data, setData] = useState(initialState)
+    const [aboutme, setAboutme] = useState(initialState)
 
     useEffect(() => {
-        fetch('/api/aboutme')
-        .then((res: Response) => res.json().then((json: AboutMeType) => setData(json)))
+        const {data: meta, content} = matter(data)
+        const infos: PersonalInfoType[] = Object.keys(meta).map(key => {return {field: key, value: meta[key]}})
+        setAboutme({content: content, infos})
     }, [])
 
     const togglePreviewCV = () => {
@@ -24,13 +27,13 @@ const About = () => {
   return (
     <section id="about" data-index="1" className={`about`}>
         <h2>ABOUT <span>ME</span></h2>
-        { data.infos.length ?
+        { aboutme.infos.length ?
         <div className={styles.description}>
             <ReactMarkdown className={styles.content}>
-                {data.content}
+                {aboutme.content}
             </ReactMarkdown>
             <div className={styles.info}>
-                {data.infos.map((info, key) => (
+                {aboutme.infos.map((info, key) => (
                     <div key={key}>
                         <label>{info.field}</label>
                         <span>{info.value}</span>
