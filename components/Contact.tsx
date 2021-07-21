@@ -5,7 +5,7 @@ interface IProps {
 const Contact = ({className} : IProps) => {
   return (
     <section id="contact" data-index="5" className={"contact " + className}>
-        Contact 
+        <h2>Contact <span>Me</span></h2>
     </section>
   )
 }

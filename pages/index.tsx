@@ -13,10 +13,10 @@ export default function Home() {
     <>
         <Introduction className={`${styles.section} section`}/>
         <About className={`${styles.section} section`}/>
-        <SkillExperience className={`${styles.title} ${styles.section} section`}/>
-        <Project className={`${styles.title} ${styles.section} section`}/>
-        <Blog className={`${styles.title} ${styles.section} section`}/>
-        <Contact className={`${styles.title} ${styles.section} section`}/>
+        <SkillExperience className={`${styles.section} section`}/>
+        <Project className={`${styles.section} section`}/>
+        <Blog className={`${styles.section} section`}/>
+        <Contact className={`${styles.section} section`}/>
         <Footer className={`footer`}/>
     </>
   )

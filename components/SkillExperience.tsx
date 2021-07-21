@@ -5,7 +5,7 @@ interface IProps {
 const SkillExperience = ({className} : IProps) => {
   return (
     <section id="skill" data-index="2" className={"skill " + className}>
-        Skill & Experience
+        <h2>Skill & <span>Experience</span></h2>
     </section>
   )
 }

@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.canvas {
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+            position: absolute;
+        }
+    }
+}
+
+.controller {
+    padding: 10px;
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    span {
+        border: 1px solid $primary;
+        border-radius: 5px;
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+}

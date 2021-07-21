@@ -4,20 +4,29 @@
     padding: 15px 20px;
     border-radius: 10px;
     cursor: pointer;
+    text-align: center;
+    border: 1px solid $background;
 
     &.primary {
         color: $foreground;
-        background: teal;
+        background: $primary;
     }
 
     &.secondary {
-        border: 1px solid teal;
+        border-color: $primary;
         
     }
 
     &:hover {
         color: $foreground;
-        background: coral;
+        background: $secondary;
+        border-color: $background;
     }
 }
 
+@media only screen and (max-width: 665px) {
+    .small {
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}

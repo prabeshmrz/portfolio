@@ -38,7 +38,7 @@ a {
         scroll-snap-type: y mandatory;
         overflow-y:scroll;
         scroll-behavior: smooth;
-        scrollbar-color: #424242 rgba(0,0,0,0);
+        scrollbar-color: $secondary rgba(0,0,0,0);
 
         .section {
             height: 92vh;
@@ -59,8 +59,8 @@ a {
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #424242;
-            border: 3px solid #16161d;
+            background-color: $secondary;
+            border: 3px solid $background;
             border-radius: 10em;
         }
     }
@@ -81,7 +81,7 @@ a {
             &.on {
                 padding-top: 20%;
                 padding-bottom: 40%;
-                background-color: $primary;
+                background-color: $surface;
                 height: 100vh;
                 width: 100vw;
                 display:flex;
@@ -93,5 +93,14 @@ a {
                 height: 100vh;
             }
         }
+    }
+    h1, h2 {
+        margin: 5px;
+    }
+}
+h1, h2 {
+    text-align: center;
+    span {
+        color: $secondary;
     }
 }
