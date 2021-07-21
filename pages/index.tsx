@@ -10,9 +10,9 @@ import Introduction from '../components/Introduction'
 import Project from '../components/Project'
 import SkillExperience from '../components/SkillExperience'
 
-const Home = ({data}: any) => {
+const Home = ({aboutme}: any) => {
     useEffect(() => {
-        console.log(data);
+        console.log(aboutme);
     }, [])
     return (
         <>
@@ -27,12 +27,12 @@ const Home = ({data}: any) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
     const aboutme = fs.readFileSync(path.join('contents/About/index.md'), 'utf-8')
 
     console.log(aboutme);
 
-    return { props: {} }
+    return { props: {aboutme} }
 }
 
 export default Home;
