@@ -1,10 +1,6 @@
-interface IProps {
-    className : string
-}
-
-const Project = ({className} : IProps) => {
+const Project = () => {
   return (
-    <section id="project" data-index="3" className={"project " + className}>
+    <section id="project" data-index="3" className={`project`}>
         <h2>My <span>Projects</span></h2>
     </section>
   )

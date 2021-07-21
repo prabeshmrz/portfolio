@@ -1,11 +1,11 @@
 import styles from "../styles/Footer.module.css";
 
-const Footer = ({className}:any) => {
+const Footer = () => {
   return (
     <>
-        <div className={`${styles.footer} ${className}`}>
-            <span>Footer </span>
-        </div>
+        <footer className={`${styles.footer}`}>
+            <span>Footer</span>
+        </footer>
     </>
   )
 }

@@ -1,17 +1,13 @@
+import { useEffect } from "react";
 import Image from "next/image";
-import { init } from 'ityped'
-import Avatar from "../public/images/avatar.jpg";
-import styles from "../styles/Introduction.module.scss";
-import React, { useEffect } from "react";
-import Button from "./Button";
 import Particles from "react-tsparticles";
-import  TsParticlesConfig from "../utils/TsParticlesConfig";
+import { init } from 'ityped'
+import Button from "./Button";
+import Avatar from "../public/images/avatar.jpg";
+import TsParticlesConfig from "../utils/TsParticlesConfig";
+import styles from "../styles/Introduction.module.scss";
 
-interface IProps {
-    className: string,
-}
-
-const Introduction = ({className}: IProps) => {
+const Introduction = () => {
     
 
     useEffect(() => {
@@ -21,7 +17,7 @@ const Introduction = ({className}: IProps) => {
     },[])
 
     return (
-        <section id='home' data-index="0" className={`home ${className} ${styles.home}`}>
+        <section id='home' data-index="0" className={`home ${styles.home}`}>
             <Particles id={styles.tsparticles} options={TsParticlesConfig}/>
             <div className={styles.avatar}>
                 <Image src={Avatar} alt="" layout={"responsive"} />

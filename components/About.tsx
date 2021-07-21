@@ -5,13 +5,9 @@ import Button from './Button';
 import PdfModal from './PdfModal';
 import styles from '../styles/About.module.scss';
 
-interface IProps {
-    className : string
-}
-
 const initialState: AboutMeType = {content: "", infos: []};
 
-const About = ({className}: IProps) => {
+const About = () => {
 
     const [data, setData] = useState(initialState)
 
@@ -26,7 +22,7 @@ const About = ({className}: IProps) => {
     }
 
   return (
-    <section id="about" data-index="1" className={`about ${className}`}>
+    <section id="about" data-index="1" className={`about`}>
         <h2>ABOUT <span>ME</span></h2>
         { data.infos.length ?
         <div className={styles.description}>
