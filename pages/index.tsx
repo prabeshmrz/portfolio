@@ -1,5 +1,7 @@
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps, GetStaticProps } from 'next'
 import { useEffect } from 'react'
+import fs from 'fs';
+import path from 'path';
 import About from '../components/About'
 import Blog from '../components/Blog'
 import Contact from '../components/Contact'
@@ -25,13 +27,12 @@ const Home = ({data}: any) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const host = context.req.headers.host;
-    const protocol = host?.includes('localhost') ? 'http' : 'https';
-    const res = await fetch(`${protocol}://${host}/api/aboutme`);
-    const data = await res.json();
+export const getStaticProps: GetStaticProps = async (context) => {
+    const aboutme = fs.readFileSync(path.join('contents/About/index.md'), 'utf-8')
 
-    return { props: { data } }
+    console.log(aboutme);
+
+    return { props: {} }
 }
 
 export default Home;
