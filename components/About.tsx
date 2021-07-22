@@ -17,6 +17,7 @@ const About = ({data}: any) => {
         const {data: meta, content} = matter(data)
         const infos: PersonalInfoType[] = Object.keys(meta).map(key => {return {field: key, value: meta[key]}})
         setAboutme({content: content, infos})
+        // eslint-disable-next-line
     }, [])
 
     const togglePreviewCV = () => {

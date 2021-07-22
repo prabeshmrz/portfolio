@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+.description {
+    display: flex;
+    padding: 0px 50px;
+    column-gap: 50px;
+}
+
+.chart {
+    background-color: $surface;
+    border: 1px solid $border;
+    border-radius: 5px;
+    padding: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+}
+
+.skill {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto auto;
+    row-gap: 50px;
+}
+
+.experience {
+    width: 60% !important;
+    max-height: 75vh;
+    border: 1px solid $border;
+    padding: 5px !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $secondary;
+    }
+}
+
+.tools {
+    background-color: $surface;
+    border: 1px solid $surface;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap:wrap;
+    column-gap: 5px;
+    row-gap: 5px;
+
+    span {
+        border: 1px solid $on_background;
+        border-radius: 3px;
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .description {
+        flex-direction: column;
+        row-gap: 5px;
+    }
+
+    .skill {
+        width: 100%;
+        padding: 0px 10%;
+        row-gap: 5px;
+        h3 {
+            margin: 0px;
+            text-align: center;
+        }
+    }
+
+    .tools {
+        column-gap: 2px;
+        row-gap: 2px;
+        justify-content: center;
+        span {
+            padding: 2px 4px;
+        }
+    }
+
+    .experience {
+        width: 80% !important;
+        margin: 0px 10% !important;
+        max-height: 40vh;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .description {
+        padding: 0px;
+    }
+    .skill {
+        padding: 0px;
+    }
+    .experience {
+        margin: 0px !important;
+        width: 100% !important;
+    }
+}
