@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+.card {
+	background-color: $surface;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px $border solid;
+	transition: 200ms;
+    max-width: 100%;
+    &:hover {
+        box-shadow: 0px 0px 5px $on_background;
+        cursor: pointer;
+    }
+}
+
+.card-header {
+	display: grid;
+    grid-template-columns: 2.5rem auto;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.profile {
+	width: 2.5rem;
+	height: 2.5rem;
+	background-color: tomato;
+	border-radius: 50%;
+	font-size: 20pt;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	justify-content: center;
+}
+
+.letter {
+	vertical-align: middle;
+}
+
+.card-title-group {
+	justify-content: center;
+}
+
+.card-title {
+	flex: 0.5;
+	font-size: large;
+	margin-bottom: 0;
+	margin-top: 0;
+    height: 24px;
+    overflow: hidden;
+}
+.card-date {
+	flex: 0.3;
+	font-size: small;
+	margin-top: 0;
+}
+
+.card-image {
+	border-radius: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+    width: 100%;
+}
+
+.card-text {
+	width: 100%;
+	font-size: medium;
+    max-height: 44px;
+    overflow: hidden;
+}
+

@@ -45,15 +45,13 @@
 
 .tools {
     background-color: $surface;
-    border: 1px solid $surface;
-    border-radius: 10px;
     display: flex;
     flex-wrap:wrap;
     column-gap: 5px;
     row-gap: 5px;
 
     span {
-        border: 1px solid $on_background;
+        border: 1px solid $border;
         border-radius: 3px;
         padding: 5px 10px;
     }

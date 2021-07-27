@@ -1,0 +1,8 @@
+.bloglist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5fr 3fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 0px 50px;
+}

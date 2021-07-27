@@ -8,24 +8,26 @@ import Footer from '../components/Footer'
 import Introduction from '../components/Introduction'
 import Project from '../components/Project'
 import SkillExperience from '../components/SkillExperience'
+import { GetAllStaticProps } from '../utils/StaticProps';
+import { Post } from '../utils/Type/Post';
 
-const Home = ({aboutme}: any) => {
+const Home = ({aboutme, blogs}: {aboutme: string, blogs: Post[]}) => {
     return (
         <>
             <Introduction/>
             <About data={aboutme}/>
             <SkillExperience/>
             <Project/>
-            <Blog/>
+            <Blog data={blogs}/>
             <Contact/>
             <Footer/>
         </>
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    const aboutme = fs.readFileSync(path.join('contents/About/index.md'), 'utf-8')
-    return { props: {aboutme} }
+export const getStaticProps: GetStaticProps = async (context) => {
+    const { aboutme, blogs } = GetAllStaticProps();
+    return { props: { aboutme, blogs } }
 }
 
 export default Home;
