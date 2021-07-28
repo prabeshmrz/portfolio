@@ -23,7 +23,6 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    grid-template-rows: auto auto;
     row-gap: 50px;
 }
 
@@ -54,21 +53,30 @@
 
     span {
         border: 1px solid $on_background;
+        font-size: 0.9em;
         border-radius: 3px;
-        padding: 5px 10px;
+        padding: 2px 4px;
     }
 }
 
-@media only screen and (max-width: 665px) {
-    .description {
-        flex-direction: column;
-        row-gap: 5px;
-    }
+.conditional_hide {
+    display: none;
+}
 
+.conditional_color {
+    color: $on_background;
+}
+
+.conditional_show {
+    display: inline;
+}
+
+@media only screen and (max-width: 665px) {
     .skill {
+        min-height: 80vh;
         width: 100%;
-        padding: 0px 10%;
-        row-gap: 5px;
+        justify-content: space-around;
+        // row-gap: 5px;
         h3 {
             margin: 0px;
             text-align: center;
@@ -87,8 +95,26 @@
     .experience {
         width: 80% !important;
         margin: 0px 10% !important;
-        max-height: 40vh;
+        max-height: 80vh;
     }
+
+    .conditional_hide {
+        display: inline;
+        color: $on_background;
+    }
+
+        .block {
+            display: block;
+        }
+
+    .conditional_color {
+        color: $secondary;
+    }
+
+    .conditional_show {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {

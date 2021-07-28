@@ -1,15 +1,36 @@
 import { Experience } from "../../utils/Type/Skill"
 
 export const Skills = {
-    language: {
-        labels: ['Java', 'Python', 'JavaScript', 'SpringBoot', 'Django', 'React', 'Angular'],
-        datasets: [{
-            label: '',
-            backgroundColor: ['#e66f0099', '#37709f99', '#f0dc4e99', '#68bd4699', '#2caa7999', '#03d6ff99', '#de003099'],
-            borderWidth: 0,
-            data: [75, 65, 50, 80, 55, 65, 50]
-        }],
-    },
+    skill: [
+        {
+            label: 'Java',
+            data: 75
+        },
+        {
+            label: 'Python',
+            data: 65
+        },
+        {
+            label: 'JavaScript',
+            data: 50
+        },
+        {
+            label: 'SpringBoot',
+            data: 80
+        },
+        {
+            label: 'Django',
+            data: 55
+        },
+        {
+            label: 'React',
+            data: 65
+        },
+        {
+            label: 'Angular',
+            data: 50
+        }
+    ],
     tools: [
         'Docker',
         'Gitlab-CI',
