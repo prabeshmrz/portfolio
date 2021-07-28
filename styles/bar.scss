@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+.skill-bar {
+    display: grid;
+    row-gap: 10px;
+
+    .bar {
+        h3 {
+            margin: 0px;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        .progress-line {
+            height: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            border-radius: 3px;
+            background-color: $surface;
+            overflow: hidden;
+            box-shadow: 0 0 10px $primary;
+
+            span {
+                height: 2px;
+                float: left;
+                background: $primary;
+            }
+        }
+
+        @for $i from 50 through 100 {
+            .data-#{$i} {
+                .skill-animation {
+                    width: $i * 1%;
+                    &.on {
+                        animation: animate-#{$i} 2s;
+                    }
+                }
+
+                @keyframes animate-#{$i} {
+                    0%{
+                        width: 0%;
+                    }
+                    100%{
+                        width: $i * 1%;
+                    }
+                }
+
+            }
+        }
+    }
+
+}

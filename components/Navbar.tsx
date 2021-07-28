@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "../styles/Navbar.module.scss";
+import Link from "next/link";
 import Logo from "./Logo";
+import styles from "../styles/Navbar.module.scss";
 
 const bubbleDirection = {
     height: 0,
@@ -86,6 +86,9 @@ const Navbar = () => {
                     </Link>
                     <Link href="#skill">
                       <a data-page="skill">Skill</a>
+                    </Link>
+                    <Link href="#experience">
+                      <a data-page="experience" className={styles.conditional_hide}>Experience</a>
                     </Link>
                     <Link href="#project">
                       <a data-page="project">Projects</a>

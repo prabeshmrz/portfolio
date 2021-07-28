@@ -47,8 +47,16 @@
     z-index:1;
 }
 
+.conditional_hide {
+    display: none !important;
+}
 
 @media only screen and (max-width: 665px) {
+
+    .conditional_hide {
+        display: flex !important;
+    }
+
     .alias{
         justify-content: center;
         width: inherit;

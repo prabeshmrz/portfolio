@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import '../styles/globals.scss'
 import '../styles/buttons.scss';
 import '../styles/card.scss';
+import '../styles/bar.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
