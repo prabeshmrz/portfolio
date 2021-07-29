@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
 import { Skills } from "../contents/Skill";
-import Experience from "./Experience";
-import Bar from "./Bar";
-import 'react-vertical-timeline-component/style.min.css';
+import Bar from "./chartComponents/Bar";
+import Timeline from "./chartComponents/Timeline";
 import styles from "../styles/Skill.module.scss";
 
 const SkillExperience = () => {
@@ -30,12 +28,12 @@ const SkillExperience = () => {
                             </div>
                         </div>
                     </div>
-                    <Experience className={`${styles.experience} ${styles.conditional_show}`}/>
+                    <Timeline className={`${styles.experience} ${styles.conditional_show}`}/>
                 </div>
             </section>
             <section id="experience" data-index="2.5" className={`experience ${styles.conditional_hide} ${styles.block}`}>
                 <h2>My <span>Experience</span></h2>
-                <Experience className={`${styles.experience}`}/>
+                <Timeline className={styles.experience}/>
             </section>
         </>
     )

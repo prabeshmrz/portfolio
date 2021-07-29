@@ -29,9 +29,8 @@
 .experience {
     width: 60% !important;
     max-height: 75vh;
-    border: 1px solid $border;
     padding: 5px !important;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     &::-webkit-scrollbar {
         width: 4px;
@@ -74,7 +73,6 @@
         min-height: 80vh;
         width: 100%;
         justify-content: space-around;
-        // row-gap: 5px;
         h3 {
             margin: 0px;
             text-align: center;
@@ -102,7 +100,7 @@
     }
 
         .block {
-            display: block;
+            display: grid;
         }
 
     .conditional_color {
@@ -110,7 +108,7 @@
     }
 
     .conditional_show {
-        display: none;
+        display: none !important;
     }
 
 }

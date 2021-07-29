@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Skills } from "../contents/Skill";
+import { Skills } from "../../contents/Skill";
 
 const Bar = ({className}: any) => {
     const {skill} = Skills;
