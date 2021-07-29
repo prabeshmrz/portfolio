@@ -48,7 +48,7 @@ export const Skills = {
 export const Experiences: Experience[] = [
     {
         company: 'ITGlance',
-        position: 'Full-Stack Developer (Intern)',
+        position: 'Full-Stack Developer Intern',
         duration: 'Jul. 2020 - Dec. 2020',
         roles: [
             'Built secure rest endpoints using spring boot',
